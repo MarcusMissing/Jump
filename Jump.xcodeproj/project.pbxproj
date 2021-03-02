@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C7B3BFC25EE74BE009A6CEF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2C7B3BFB25EE74BE009A6CEF /* .gitignore */; };
 		2C926B0B25E99E6100A65A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C926B0A25E99E6100A65A66 /* AppDelegate.swift */; };
 		2C926B1125E99E6100A65A66 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C926B1025E99E6100A65A66 /* GameScene.swift */; };
 		2C926B1325E99E6100A65A66 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C926B1225E99E6100A65A66 /* GameViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C7B3BFB25EE74BE009A6CEF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2C926B0725E99E6100A65A66 /* Jump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C926B0A25E99E6100A65A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C926B1025E99E6100A65A66 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				2C926B4025E99E8E00A65A66 /* Templates */,
 				2C926B3F25E99E8400A65A66 /* Scenes */,
 				2C926B3E25E99E7200A65A66 /* ViewController */,
+				2C7B3BFB25EE74BE009A6CEF /* .gitignore */,
 			);
 			path = Jump;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C926B1625E99E6100A65A66 /* Main.storyboard in Resources */,
+				2C7B3BFC25EE74BE009A6CEF /* .gitignore in Resources */,
 				2C926B1825E99E6300A65A66 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
