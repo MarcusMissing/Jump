@@ -20,6 +20,7 @@ class GameScene: SKScene {
     var spawnTimer = Timer()
     var difficultyTimer = Timer()
     var powerUpTimer = Timer()
+    var powerUpSpawnTimer = Timer()
     var isGameOver = false
     var isPowerUp = false
     var obsticles = Set<SKSpriteNode>()
@@ -48,7 +49,7 @@ class GameScene: SKScene {
         createBackWall()
         increaseDifficulty()
         difficultyTimer = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(increaseDifficulty), userInfo: nil, repeats: true)
-        powerUpTimer = Timer.scheduledTimer(timeInterval: TimeInterval(Int.random(in: 5 ..< 10)), target: self, selector: #selector(spawnPowerUps), userInfo: nil, repeats: true)
+        powerUpSpawnTimer = Timer.scheduledTimer(timeInterval: TimeInterval(Int.random(in: 7 ..< 11)), target: self, selector: #selector(spawnPowerUps), userInfo: nil, repeats: true)
     }
     
     @objc func increaseDifficulty() {
@@ -168,7 +169,9 @@ class GameScene: SKScene {
         }
     }
     
-    func beginPowerUp() {
+    func
+    beginPowerUp() {
+        powerUpTimer.invalidate()
         square.physicsBody?.collisionBitMask = PhysicsCategories.floorCategory
         powerUpTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(endPowerUp), userInfo: nil, repeats: false)
     }
@@ -218,7 +221,7 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         for o in obsticles {
-            o.physicsBody!.velocity = CGVector(dx: -500.0, dy: 7.5)
+            o.physicsBody!.velocity = CGVector(dx: -500.0, dy: 8.0)
         }
         
         for p in powerUps {
@@ -253,8 +256,13 @@ extension GameScene: SKPhysicsContactDelegate {
                 powerUp.removeFromParent()
                 self.powerUps.remove(powerUp)
             }
-            isPowerUp = true
-            self.beginPowerUp()
+            
+            if isPowerUp {
+                self.beginPowerUp()
+            } else {
+                isPowerUp = true
+                self.beginPowerUp()
+            }
         }
         
         if contactMask == PhysicsCategories.squareCategory | PhysicsCategories.obstacleCategory {
